@@ -80,6 +80,7 @@ object Utils {
             Log.e(AppConfig.TAG, "Failed to get clipboard content", e)
             ""
         }
+
     }
 
     /**

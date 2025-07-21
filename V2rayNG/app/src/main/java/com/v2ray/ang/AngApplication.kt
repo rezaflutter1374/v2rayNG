@@ -18,9 +18,9 @@ class AngApplication : MultiDexApplication() {
      * @param base The base context.
      */
     override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        application = this
-    }
+    super.attachBaseContext(base?.let { LocaleHelper.setLocale(it, LocaleHelper.getLanguage(it)) })
+    application = this
+}
 
     private val workManagerConfiguration: Configuration = Configuration.Builder()
         .setDefaultProcessName("${ANG_PACKAGE}:bg")
